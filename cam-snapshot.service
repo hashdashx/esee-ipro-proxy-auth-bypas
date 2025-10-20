@@ -1,0 +1,14 @@
+[Unit]
+Description=Run Flask camera snapshot server
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /root/waw/cam.py
+Restart=always
+User=root
+WorkingDirectory=/root
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
